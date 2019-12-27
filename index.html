@@ -1,46 +1,461 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://kit.fontawesome.com/ba2fd54616.js" crossorigin="anonymous"></script>
+        <style>
+            ::placeholder {
+              color: white;
+              opacity: 0.7; /* Firefox */
+            }
 
-    </head>
+            .inputEdit {
+                background-color: black;
+                padding: 10px;
+                width: 200px;
+                border-color: transparent;
+                color: white;
+            }
+            .buttonEdit {
+                background-color: gray;
+                padding: 10px;
+                color: white;
+                border-color: transparent;
+                margin-left:-5px;
+                }
+                .buttonEdit:hover{
+                    translate: background-color 0.5s ease;
+                    background-color: black;
+                }
+            .hipperLink:hover{
+                color: red;
+            }
+            .hipperLink{
+                margin-top: -10px;
+            }
+            .headerBorder{
+                border: solid black 2px;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 25px;
+
+            }
+            .headerText{
+                padding: 10px;
+                font-size: 25px;
+            }
+            .backgroundTop{
+                max-width: 100%;
+                display: block;
+                background-size: cover;
+                background: url("./assets/sd_1920x600.jpeg");
+                height: 500px;
+                
+            }
+            .itemImage{
+                position: relative;
+                background: rgba(0,0,0,0) url("./assets/AT6174-005_600_600px.jpg");
+                width: 182px;
+                height: 182px;
+                background-size: cover;
+                transition: background-color 1s;
+            }
+            .itemImage:hover{
+               background-color: rgba(153, 132, 130, 0.2);
+            }
+            .itemImage:before {
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+                background-color: inherit;
+                content: ' ';
+            }
+            #tooltiptextt{
+                width: 50%;
+                background: black;
+                color:white;
+                visibility: hidden;
+                position: relative;
+                bottom: 100px;
+                font-weight: 0;
+                font-size: 20px;
+                right: 55px;
+                padding: 3px;
+                border-radius: 5px;
+                
+            }
+            #icon:hover #tooltiptextt{
+                visibility: visible;
+                
+            }
+            #icon:hover{
+                color: red;
+            }
+            .itemNew{
+                position: relative;
+                top: 10%;
+                background-color: #3734eb;
+                color: white;
+                padding: 6px;
+                border-bottom-right-radius: 15px;
+                border-top-right-radius: 15px;
+                width: 60px;
+                border-top: solid white 1px;
+                border-right:solid white 1px ;
+                border-bottom: solid white 1px;
+                box-shadow: 1px 0px 0px 1px #3734eb;
+                font-size: 12px;
+                text-align: center;
+            }
+            .itemSale{
+                position: relative;
+                left: 60%;
+                margin-top: -40px;
+                background-color: green;
+                color: white;
+                padding: 6px;
+                border-bottom-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+                width: 40px;
+                border-left: solid white 1px;
+                border-right:solid white 1px ;
+                border-bottom: solid white 1px;
+                box-shadow: 1px 1px 1px 1px green;
+                font-size: 12px;
+                text-align: center; 
+            }
+            .heart{
+                position: relative;
+                bottom: -110px;
+                right: -140px;
+                font-size: 30px;
+                font-weight: bold;
+                color: white;
+            }
+            #headerIcon:hover{
+                color: red;
+            }
+          
+            .img-hover-zoom{
+                overflow: hidden;
+            }
+            .img-hover-zoom img {
+            transition: transform .5s ease;
+            }
+            .img-hover-zoom:hover img{
+                transform: scale(1.5);
+
+            }
+            #footerIcon{
+                font-size: 35px;
+                margin-left: 5px;
+            }
+            #footerIcon:hover{
+                color: blue;
+            }
+            #footerIcon1{
+                font-size: 35px;
+                margin-left: 5px;
+            }
+            #footerIcon1:hover{
+                color: #ffc72b;
+            }
+            #footerIcon2{
+                font-size: 35px;
+                margin-left: 5px;
+            }
+            #footerIcon2:hover{
+                color: red;
+            }
+            
+        </style>
+        </head>
     <body>
         <!--Header-->
-        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
             <img style="width: 164px; height: 80px; margin-left: 20px; margin-top: 10px" src="./assets/buzz_logo.png">
-            <div style="display: flex; flex-direction: row; width: 800px; justify-content: space-between; margin-top: 30px;">
-                <h2>Muskarci</h2>
-                <h2>Zene</h2>
-                <h2>Last buy</h2>
-                <h2>Proizovodi</h2>
-                <h2>Brendovi</h2>
-                <h2>Prodavnice</h2>
-                <h2>Buzz crew</h2>
+            <div style="display: flex; flex-direction: row; width: 900px; justify-content: space-between; margin-top: 30px;">
+                <p class="headerText"> Muskarci</p>
+                <p  class="headerText">Zene</p>
+                <p class="headerBorder">Last buy</p>
+                <p class="headerText">Proizovodi</p>
+                <p  class="headerText">Brendovi</p>
+                <p  class="headerText">Prodavnice</p>
+                <p class="headerBorder">Buzz<span style="color: red;"> crew</span></p>
             </div>
-            <div style="display: flex; flex-direction: row;" >
-                <h2>S</h2>
-                <h2>H</h2>
-                <h2>B</h2>
+            <div style="display: flex; flex-direction: row; margin-right: 30px;">
+                <i id="headerIcon"style="font-size: 25px; margin: 10px" class="fas fa-search"></i>
+                <i id="headerIcon"style="font-size: 25px; margin: 10px" class="fas fa-heart"></i>
+                <i id="headerIcon"style="font-size: 25px; margin: 10px" class="fas fa-shopping-cart"></i>
             </div>
         </div>
-        <div>
-            <img src="./assets/sd_1920x600.jpeg"/>
-        </div>
-        <div>
-            <h2 style="text-align: center;">NAJTRAZENIJI PROIZVODI</h2>
-            <div>
+        <div class="backgroundTop"></div>
+
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <h2>NAJTRAZENIJI PROIZVODI</h2>
+            <div style="display: flex; flex-direction: row;">
                 <div style="width: 200px;">
-                    <img style="width: 90%;"src="./assets/AT6174-005_600_600px.jpg"/>
+                    <div class="itemImage">
+                        <p class="itemNew">NEW</p>
+                        <p class="itemSale">20%</p>
+                        <i id="icon" class="far fa-heart heart">
+                            <p id="tooltiptextt">Dodajte u listu zelja</p>
+                        </i>
+                       
+                    </div>
                     <p>W ADIDAS NMD</p>
                     <p style="color: red;">227 KM</p>
                     <p style="text-decoration: line-through;">330 KM</p>
                 </div>
                 <div style="width: 200px;">
-                        <img style="width: 90%;"src="./assets/AT6174-005_600_600px.jpg"/>
-                        <p>W AIR MAX 270 REACT</p>
-                        <p style="color: red;">227 KM</p>
-                        <p style="text-decoration: line-through;">330 KM</p>
+                    <div class="itemImage">
+                        <p class="itemNew">NEW</p>
+                        <p class="itemSale">20%</p>
+                        <i id="icon" class="far fa-heart heart">
+                            <p id="tooltiptextt">Dodajte u listu zelja</p>
+                        </i>
                     </div>
+                    <p>W ADIDAS NMD</p>
+                    <p style="color: red;">227 KM</p>
+                    <p style="text-decoration: line-through;">330 KM</p>
+                </div>
+                <div style="width: 200px;">
+                    <div class="itemImage">
+                        <p class="itemNew">NEW</p>
+                        <p class="itemSale">20%</p>
+                        <i id="icon" class="far fa-heart heart">
+                            <p id="tooltiptextt">Dodajte u listu zelja</p>
+                        </i>
+                    </div>
+                    <p>W ADIDAS NMD</p>
+                    <p style="color: red;">227 KM</p>
+                    <p style="text-decoration: line-through;">330 KM</p>
+                </div>
+                <div style="width: 200px;">
+                    <div class="itemImage">
+                        <p class="itemNew">NEW</p>
+                        <p class="itemSale">20%</p>
+                        <i id="icon" class="far fa-heart heart">
+                            <p id="tooltiptextt">Dodajte u listu zelja</p>
+                        </i>
+                    </div>
+                    <p>W ADIDAS NMD</p>
+                    <p style="color: red;">227 KM</p>
+                    <p style="text-decoration: line-through;">330 KM</p>
+                </div>
+                <div style="width: 200px;">
+                    <div class="itemImage">
+                        <p class="itemNew">NEW</p>
+                        <p class="itemSale">20%</p>
+                        <i id="icon" class="far fa-heart heart">
+                            <p id="tooltiptextt">Dodajte u listu zelja</p>
+                        </i>
+                    </div>
+                    <p>W ADIDAS NMD</p>
+                    <p style="color: red;">227 KM</p>
+                    <p style="text-decoration: line-through;">330 KM</p>
+                </div>
             </div>
         </div>
+        <div>
+            <div style="display: flex; flex-direction: row;">
+                <div style="display: flex; flex-direction: column; width: 50%;height: 300px;margin: 10px;">
+                    <div class="img-hover-zoom">
+                    <img id="slika" src="assets/P2-582x260_3(1).jpg"/>
+                    </div>
+                    <h2 style="margin-top:-10px;background-color: #ececec; padding: 15px; text-align: center;">FILA RETRO INSPIRED</h2>   
+                </div>
+                <div style="display: flex; flex-direction: column; width: 50%;height: 300px;margin: 10px;">
+                    <div class="img-hover-zoom">
+                    <img src="./assets/buzz-p2-3.jpg"/>
+                    </div>
+                    <h2 style="margin-top:-10px;background-color: #ececec; padding: 15px;  text-align: center;">NIKE AIR MAX 90</h2>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div style="display:flex; flex-direction: column;width: 50%;height: 300px;margin: 10px;">
+                    <div class="img-hover-zoom">
+                    <img src="./assets/buzz-p2-4.jpg"/>
+                    </div>
+                    <h2 style="margin-top:-10px;background-color: #ececec; padding: 15px; text-align: center;">ADIDAS OZWEEGO</h2>
+                </div>
+                <div style="display:flex; flex-direction: column;width: 50%;height: 300px;margin: 10px;">
+                    <div class="img-hover-zoom">
+                    <img src="./assets/buzz-p2-2.jpg"/>
+                    </div>
+                    <h2 style="margin-top:-10px;background-color: #ececec; padding: 15px; text-align: center;">NEW BALANCE 997</h2>
+                </div>
+
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div style="display:flex; flex-direction: column;width: 50%;height: 300px;margin: 10px;">
+                    <div class="img-hover-zoom">
+                    <img src="./assets/buzz-p2-7.jpg"/>
+                    </div>
+                    <h2 style="margin-top:-10px;background-color: #ececec; padding: 15px;  text-align: center;">REEBOK AZTREK</h2>
+                </div>
+                <div style="display:flex; flex-direction: column;width: 50%;height: 300px;margin: 10px;">
+                    <div class="img-hover-zoom">
+                    <img src="./assets/buzz-p2-5.jpg"/>
+                    </div>
+                    <h2 style="margin-top:-10px;background-color: #ececec; padding: 15px;  text-align: center;">PUMA</h2>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+            <h2>
+                BUZZ BLOG
+            </h2>
+            <div>
+                <div style="display: flex; flex-direction: row;">
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/kocak28129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">25.12.2019</p>
+                            <p class="hipperLink" >FILA RETRO INSPIRED</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/480x32028129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">18.12.2019</p>
+                            <p class="hipperLink" >NBA SEZONA IDE UZ CAJ I SPIKE LEE.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/kocka28129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">11.12.2019</p>
+                            <p class="hipperLink">BLACK X GOLD COLLECTION</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/kocak28129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">25.12.2019</p>
+                            <p class="hipperLink" >FILA RETRO INSPIRED</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/480x32028129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">18.12.2019</p>
+                            <p class="hipperLink">NBA SEZONA IDE UZ CAJ I SPIKE LEE.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/kocka28129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">11.12.2019</p>
+                            <p class="hipperLink">BLACK X GOLD COLLECTION</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/kocak28129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">25.12.2019</p>
+                            <p class="hipperLink">FILA RETRO INSPIRED</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/480x32028129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">18.12.2019</p>
+                            <p class="hipperLink">NBA SEZONA IDE UZ CAJ I SPIKE LEE.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;height: 100px;margin: 5px;">
+                        <div>
+                            <img src="./assets/kocka28129_150_100px.jpg"/>
+                        </div>
+                        <div style="margin-top: -20px;padding: 5px;">
+                            <h3>BLOGGER PICK </h3>
+                            <p  style="margin-top: -10px;">11.12.2019</p>
+                            <p class="hipperLink">BLACK X GOLD COLLECTION</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin: 20px;">
+            <img style="margin: 30px;" src="./assets/nike(1).png"/>
+            <img style="margin: 30px;" src="./assets/Originals_Logo_BWp.png"/>
+            <img style="margin: 30px;" src="./assets/nb.png"/>
+            <img style="margin: 30px;" src="./assets/ua.png"/>
+            <img style="margin: 30px; "src="./assets/converse-novi-crni.png"/>
+            <img style="margin: 30px; "src="./assets/vasn_logo_black_web_100x60px.png"/>
+        </div>
+    </div>
+        <div style="display: flex;flex-direction: row; justify-items: center;  align-items: center; border-top: solid black 1px; border-bottom: solid black 1px; padding: 10px;">
+            <h5 style="margin-left: 400px; width: 30%;">NAJNOVIJA OBAVJEŠTENJA O SNIŽENJIMA I NOVIM MODELIMA</h5>
+        <div style="align-items: center;">
+            <input class="inputEdit" placeholder="Unesite email"/>
+            <button class="buttonEdit">PRIJAVI SE</button>
+        </div>
+        <div style="display: flex; flex-direction: row; margin-left: 150px;">
+            <i id="footerIcon" class="fab fa-facebook"></i>
+            <i id="footerIcon1" class="fab fa-instagram"></i>
+            <i id="footerIcon2" class="fab fa-youtube"></i>
+        </div>
+        </div>
+<div style="display: flex;flex-direction: row;margin: 50px;justify-content: center">
+    <div style="margin:20px;">
+        <h3>INFRORMACIJE</h3>
+        <p>O nama</p>
+        <p>Zaposlenje</p>
+        <p>Kontakt</p>
+        <p>Poklon kartice</p>
+    </div>
+    <div style="margin:20px;">
+        <h3>POMOC PRI KUPOVINI</h3>
+        <p>Uslovi koriscenja</p>
+        <p>Politika privatnosti</p>
+        <p>Kako kupiti</p>
+    </div>
+    <div style="margin:20px;">
+        <h3>KORISNICKI SERVIS</h3>
+        <p>Isporuka</p>
+        <p>Zamjena artikla</p>
+        <p>Povrat robe i povrat sredstava</p>
+        <p>Reklamacije</p>
+    </div>
+    <div style="display: flex;flex-direction: row;background-color: gray;width: 25%; margin: 20px;">
+        <div style="position: relative; top: 40%; padding:5px;">
+            <h3 style="color: white;">CALL CENTER</h3>
+            <p style="color: white;">radnim danima:8h - 19h</p>
+            <p style="color: white;">subotom:8h - 15h</p>
+        </div>
+        <img style="position: relative; left: 10%; top:20%; height: 140px;" src="./assets/buzz-sneaker-station.png"/>
+    </div>
+</div>
     </body>
 </html>
