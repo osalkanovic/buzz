@@ -1,0 +1,379 @@
+::placeholder {
+    color: white;
+    opacity: 0.7; /* Firefox */
+  }
+  .row{
+      display: flex;
+      flex-direction: row;
+  }
+  .column{
+      display: flex;
+      flex-direction: column;
+  }
+  .center{
+      justify-content: center;
+  }
+  .space{
+      justify-content:space-between;
+  }
+  .alignCenter{
+      align-items: center;
+  }
+  .folderText{
+      font-size: 12px;
+      margin: 2px;
+  }
+  .folderSlash{
+    font-size: 12px;
+    margin: 2px;
+}
+.folderText:hover{
+    color:red;
+}
+
+
+  .inputEdit {
+      background-color: black;
+      padding: 10px;
+      width: 200px;
+      border-color: transparent;
+      color: white;
+  }
+  .buttonEdit {
+      background-color: gray;
+      padding: 10px;
+      color: white;
+      border-color: transparent;
+      margin-left:-5px;
+      }
+      .buttonEdit:hover{
+          translate: background-color 0.5s ease;
+          background-color: black;
+      }
+      .arrow{
+          font-size: 35px; color: #e38c00;
+          font-weight: bold; padding: 5px;
+      }
+      .nikeLogo{
+          position: relative;
+          bottom: -130px;
+          left: 16px;
+      }
+      #triangle-bottomright {
+          position: relative;
+          bottom: 13px;
+          right: -350px;
+        width: 0;
+        height: 0;
+        border-bottom: 50px solid green;
+        border-left: 50px solid transparent;
+      }
+      .saleNumber{
+          position: relative;
+          bottom: 200px;
+          right:-297px;
+         transform: rotate(-45deg);
+         color: white;
+         font-weight: bold;
+      }
+      #triangle-bottomright1 {
+        position: relative;
+        bottom: -37px;
+        right: -320px;
+      width: 0;
+      height: 0;
+      border-bottom: 80px solid #e38c00;
+      border-left: 80px solid transparent;
+    }
+  .hipperLink:hover{
+      color: red;
+  }
+  .hipperLink{
+      margin-top: -10px;
+  }
+  .headerBorder{
+      border: solid black 2px;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 25px;
+  }
+  .buttonMagazin{
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border: black solid 1px;
+      
+  }
+  .buttonMagazin:hover{
+      color: brown;
+  }
+  .headerText{
+      padding: 10px;
+      font-size: 25px;
+  }
+  .backgroundTop{
+      max-width: 100%;
+      display: block;
+      background-size: cover;
+      background: url("../assets/sd_1920x600.jpeg");
+      height: 500px;
+      
+  }
+  .bioTitle{
+      font-size: 11px;
+  }
+  .magazineDate{
+      position: relative;
+      bottom: 220px;
+      right: -390px;
+      background-color: black;
+      color: white;
+      width: 45px;
+      text-align: center;
+      padding: 10px;
+  }
+  .bioTitle:hover{
+      color: orange;
+  }
+  .buyIcon{
+      color: white;
+      align-self: center;
+      margin-left: 70px;
+      font-size: 25px;
+  }
+  .imageRow{
+      width: 70px;
+      margin: 5px;
+      border: solid #e38c00 1px;
+  }
+  .bioItem:hover{
+      background-color: gray;
+  }
+  .bioSubtitle{
+      color:white;
+      font-size: 12px;
+      font-weight: bold;
+  }
+  .bioText{
+     text-align: justify;
+    color:white;
+    font-size: 12px;
+  }
+  .buyText{
+      color: white;
+      margin-left: 10px;
+      font-size: 15px;
+  }
+  .inputClass{
+      border-radius: 10px;
+      height: 40px;
+      align-self: center;
+  }
+  .itemImage{
+      position: relative;
+      background: rgba(0,0,0,0) url("../assets/AT6174-005_600_600px.jpg");
+      width: 182px;
+      height: 182px;
+      background-size: cover;
+      transition: background-color 1s;
+  }
+  .itemImage1{
+    position: relative; border: solid 2px #e38c00;
+    background: rgba(0,0,0,0) url("../assets/AT6174-005_600_600px.jpg");
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    transition: background-color 1s;
+}
+  .itemImage:hover{
+     background-color: rgba(153, 132, 130, 0.2);
+  }
+  .itemImage:before {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: inherit;
+      content: ' ';
+  }
+  #tooltiptextt{
+      width: 50%;
+      background: black;
+      color:white;
+      visibility: hidden;
+      position: relative;
+      bottom: 100px;
+      font-weight: 0;
+      font-size: 20px;
+      right: 55px;
+      padding: 3px;
+      border-radius: 5px;
+      
+  }
+  #icon:hover #tooltiptextt{
+      visibility: visible;
+      
+  }
+  #icon:hover{
+      color: red;
+  }
+  .itemNew{
+      position: relative;
+      top: 10%;
+      background-color: #3734eb;
+      color: white;
+      padding: 6px;
+      border-bottom-right-radius: 15px;
+      border-top-right-radius: 15px;
+      width: 60px;
+      border-top: solid white 1px;
+      border-right:solid white 1px ;
+      border-bottom: solid white 1px;
+      box-shadow: 1px 0px 0px 1px #3734eb;
+      font-size: 12px;
+      text-align: center;
+  }
+  .itemSale{
+      position: relative;
+      left: 60%;
+      margin-top: -40px;
+      background-color: green;
+      color: white;
+      padding: 6px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      width: 40px;
+      border-left: solid white 1px;
+      border-right:solid white 1px ;
+      border-bottom: solid white 1px;
+      box-shadow: 1px 1px 1px 1px green;
+      font-size: 12px;
+      text-align: center; 
+  }
+  .heart{
+      position: relative;
+      bottom: -110px;
+      right: -140px;
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+  }
+  .heart1{
+    position: relative;
+    bottom: 42px;
+    right: -358px;
+    font-size: 30px;
+    font-weight: bold;
+    color: grey; 
+}
+  #headerIcon:hover{
+      color: red;
+  }
+  .itemTitle{
+      font-size: 25px;
+      font-weight: bold;
+  }
+  .contactNumber{
+      width: 90%;
+      align-self: center;
+      border-bottom: white solid 1px;
+  }
+  .contactNumber i{
+      width: 100%;
+      color: #e38c00;
+      font-size: 30px;
+      text-align: center;
+      align-self: center;
+  }
+  .sizeBox{
+      margin: 5px;
+      width: 30px;
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+      border:gray solid 1px;
+      padding: 5px;
+  }
+  .sizeBoxGray{
+    margin: 5px;
+    width: 30px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    border:gray solid 1px;
+    padding: 5px;
+    opacity: 0.5;
+  }
+  .sizeBoxGray p{
+    color: gray;
+    opacity: 0.5;
+    margin-bottom: -4px;
+    text-align: center;
+}
+  .sizeBox p{
+      margin-bottom: -4px;
+      text-align: center;
+  }
+  .aboveImage{
+      position: relative;
+      top: 47px;
+  }
+  .aboveImage1{
+    position: relative;
+    top: -1px;
+}
+  .contactNumber p{
+      color: white;
+      width: 100%;
+      align-self: center;
+      text-align: center;
+  }
+  .dostava{
+      width: 90%;
+      padding: 5px;
+      color: white;
+      align-self: center;
+      border-bottom: white solid 1px;
+      border-top: white solid 1px;
+      text-align: center;
+  }
+  .itemBio{
+      font-size: 15px;
+    }
+    .lastPrice{
+        font-size: 20px;
+        text-decoration: line-through;
+    }
+    .currentPrice{
+        font-size: 25px;
+        color: green;
+    }
+  .img-hover-zoom{
+      overflow: hidden;
+  }
+  .img-hover-zoom img {
+  transition: transform .5s ease;
+  }
+  .img-hover-zoom:hover img{
+      transform: scale(1.3);
+
+  }
+  #footerIcon{
+      font-size: 35px;
+      margin-left: 5px;
+  }
+  #footerIcon:hover{
+      color: blue;
+  }
+  #footerIcon1{
+      font-size: 35px;
+      margin-left: 5px;
+  }
+  #footerIcon1:hover{
+      color: #ffc72b;
+  }
+  #footerIcon2{
+      font-size: 35px;
+      margin-left: 5px;
+  }
+  #footerIcon2:hover{
+      color: red;
+  }
